@@ -4,9 +4,292 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M. Adil | Software Engineer & SaaS Builder</title>
-    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --border-color: #1f2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 15, 25, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-btn {
+            background: var(--accent-color);
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 8% 60px;
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0b0f19 70%);
+        }
+
+        .badge {
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin: 20px 0 10px;
+        }
+
+        .highlight {
+            color: #818cf8;
+        }
+
+        #hero h2 {
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .primary-btn {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            margin-left: 10px;
+        }
+
+        .secondary-btn:hover {
+            background: var(--card-bg);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            color: #ffffff;
+        }
+
+        /* About */
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: #818cf8;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .project-icon {
+            font-size: 1.5rem;
+            color: #818cf8;
+        }
+
+        .tags {
+            margin-top: 15px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tags span {
+            background: rgba(99, 102, 241, 0.2);
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: #a5b4fc;
+        }
+
+        /* Contact */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -119,6 +402,13 @@
         <p>© 2026 M. Adil. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you, ${name}! Your message has been sent to M. Adil.`);
+            this.reset();
+        });
+    </script>
 </body>
 </html>
